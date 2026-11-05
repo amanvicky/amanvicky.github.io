@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — route not found | Aman Elugam</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0e14'/%3E%3Ctext x='12' y='42' font-family='monospace' font-size='26' fill='%2300e5a0'%3E%26gt;_%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .nf { min-height: 100vh; display: grid; place-items: center; padding: 2rem; }
+    .nf-terminal { max-width: 620px; width: 100%; }
+    .nf h1 { font-size: clamp(1.6rem, 6vw, 2.4rem); color: #fff; margin: 0.3rem 0 0.6rem; }
+    .nf .btn { margin-top: 1.4rem; }
+  </style>
+</head>
+<body>
+  <main class="nf">
+    <div class="terminal nf-terminal">
+      <div class="terminal-bar">
+        <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+        <span class="terminal-title">aman@github: ~</span>
+      </div>
+      <div class="terminal-body">
+        <p><span class="prompt">$</span> open <span class="hl">PATH</span></p>
+        <h1>404 — route not found</h1>
+        <p class="dim">zsh: no such file or directory: <span id="path">this page</span></p>
+        <p>The page moved, never existed, or Instagram rate-limited it. (Two of those are jokes.)</p>
+        <a class="btn btn-primary" href="/">[ cd ~/home ]</a>
+        <a class="btn" href="/#projects">[ ls ~/projects ]</a>
+      </div>
+    </div>
+  </main>
+  <script>
+    document.getElementById("path").textContent = location.pathname;
+  </script>
+</body>
+</html>

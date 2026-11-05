@@ -87,6 +87,15 @@
             <span class="stars" data-stars aria-label="GitHub stars"></span>
           </div>
           <p class="card-desc">Self-hosted job-hunt copilot with one rule: <strong>the human approves every send</strong>. Paste a posting → match report → tailored resume + cover letter. Nightly agent scan, Gmail inbox triage, Google Calendar interviews.</p>
+          <details class="arch">
+            <summary>under the hood</summary>
+            <pre>$ leyp
+posting → extract requirements → match report → tailored resume + letter
+refine  → chat with undo → version history
+agent   → nightly scan scores new postings → approve / dismiss queue
+inbox   → Gmail sync → reply classification → flagged-gap drafts
+guard   → argon2id + JWE sessions · Google OAuth · free/busy calendar</pre>
+          </details>
           <div class="tags"><span>Next.js 16</span><span>React 19</span><span>Prisma 7</span><span>strict TS</span><span>Vitest</span><span>Playwright</span></div>
           <a class="card-link" href="https://github.com/amanvicky/leyp" target="_blank" rel="noopener">→ source</a>
         </article>
@@ -112,11 +121,21 @@
         </article>
 
         <article class="card reveal" data-repo="Skill-God-Mode">
+          <img class="card-thumb" src="https://raw.githubusercontent.com/amanvicky/Skill-God-Mode/main/social-card.png" alt="GOD MODE — an AI software company in a single skill" loading="lazy">
           <div class="card-head">
             <h3>GOD MODE</h3>
             <span class="stars" data-stars aria-label="GitHub stars"></span>
           </div>
-          <p class="card-desc"><strong>An AI software company in a single Claude skill.</strong> PM → rival dev squads → red-team waves → CEO scoring — nothing ships without the DIAMOND FINISH pass: “proof or it didn’t happen.” First run: a complete tested game in ~23 minutes.</p>
+          <p class="card-desc"><strong>An AI software company in a single Claude skill.</strong> PM → dev squads → red-team waves → CEO scoring — nothing ships without the DIAMOND FINISH pass: <strong>“proof or it didn’t happen.”</strong> First run: a complete, tested game shipped in ~23 minutes.</p>
+          <details class="arch">
+            <summary>under the hood</summary>
+            <pre>$ god-mode "build X"
+PM      → machine-checkable acceptance criteria → dod.sh (ship = exit 0)
+squads  → rival dev teams race; judge harvests the winner
+assault → QA · SRE chaos · security · red team (7 personas) · auditors
+CEO     → scores 0–10 against the bar (8.5) · below → fix-list loop
+ship    → watcher monitors deps for drift/CVEs · pipeline self-patches</pre>
+          </details>
           <div class="tags"><span>Claude</span><span>AI agents</span><span>QA gates</span><span>red team</span></div>
           <a class="card-link" href="https://github.com/amanvicky/Skill-God-Mode" target="_blank" rel="noopener">→ source</a>
         </article>

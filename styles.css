@@ -149,6 +149,39 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 .card-link { font-size: 0.86rem; color: var(--green); }
 
+/* card thumbnail (only where a real screenshot exists) */
+.card-thumb {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  display: block;
+  margin-bottom: 0.4rem;
+  aspect-ratio: 1200 / 630;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* under-the-hood diagrams */
+details.arch { margin: 0.2rem 0 0.3rem; }
+details.arch summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.8rem;
+  user-select: none;
+}
+details.arch summary:hover { color: var(--green); }
+details.arch pre {
+  margin-top: 0.55rem;
+  padding: 0.8rem 1rem;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: var(--text);
+  overflow-x: auto;
+}
+
 /* wide flagship card */
 .card-wide {
   display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.5rem; align-items: center;
