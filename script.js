@@ -200,8 +200,8 @@
   var COMMANDS = {
     help: function () {
       print("available commands:", "t-dim");
-      print("  whoami            who is this guy");
-      print("  projects          the featured six");
+      print("  whoami            who am I");
+      print("  projects          featured projects");
       print("  open <n|name>     open a repo on github (1-6 or genesis/leyp/...)");
       print("  stack             the stack, grouped");
       print("  stats             live github numbers");
@@ -212,16 +212,16 @@
       print("  sudo hire aman    try it", "t-dim");
     },
     whoami: function () {
-      print("Aman Elugam — agentic AI engineer.");
-      print("I build agent systems that end in decisions, not vibes.", "t-dim");
+      print("Aman Elugam. I build AI agents that ship with proof.");
+      print("Genesis, leyp, GOD MODE, two CV tools. All under 'projects'.", "t-dim");
     },
     projects: function () {
-      print("featured work:", "t-dim");
-      print("  1  Genesis        13-agent venture-intelligence dossiers");
-      print("  2  leyp           human-in-the-loop job-hunt copilot");
+      print("featured projects:", "t-dim");
+      print("  1  Genesis        venture due-diligence by a team of agents");
+      print("  2  leyp           job application copilot, human-approved");
       print("  3  OpenBroadcast  CPU-only real-time gaze correction");
       print("  4  Gazester       CNN-warping gaze correction");
-      print("  5  GOD MODE       AI software company in one skill file");
+      print("  5  GOD MODE       dev squads + red teams in one skill file");
       print("  6  Human-Typer    human-like typing for Windows");
       print("run: open <number>", "t-dim");
     },
