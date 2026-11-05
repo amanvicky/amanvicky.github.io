@@ -212,8 +212,8 @@
       print("  sudo hire aman    try it", "t-dim");
     },
     whoami: function () {
-      print("Aman Elugam. I build AI agents that ship with proof.");
-      print("Genesis, leyp, GOD MODE, two CV tools. All under 'projects'.", "t-dim");
+      print("Aman. I make agents and CV tools.");
+      print("Genesis, leyp and GOD MODE are the big ones. 'projects' for the rest.", "t-dim");
     },
     projects: function () {
       print("featured projects:", "t-dim");

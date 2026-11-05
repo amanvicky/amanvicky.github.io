@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aman Elugam — Agentic AI Engineer</title>
-  <meta name="description" content="Most AI demos stop at &quot;it should work&quot;. Mine end with test output, screenshots, or a source link. Genesis, leyp, GOD MODE and more, all open on GitHub.">
+  <meta name="description" content="AI agents and tools by Aman Elugam: Genesis, leyp, GOD MODE, OpenBroadcast. All open on GitHub, all tested.">
   <meta name="theme-color" content="#0a0e14">
 
   <!-- Open Graph / social -->
@@ -64,7 +64,7 @@
         <p><span class="prompt">&gt;</span> <span class="boot-cmd" data-cmd="whoami"></span><span class="cursor" aria-hidden="true">▊</span></p>
         <h1 class="hero-name boot-block">AMAN ELUGAM</h1>
         <p><span class="prompt">&gt;</span> <span class="boot-cmd" data-cmd="cat mission.txt"></span><span class="cursor" aria-hidden="true">▊</span></p>
-        <p class="hero-mission boot-block">Most AI demos stop at "it should work". Mine end with test output, screenshots, or a source link.</p>
+        <p class="hero-mission boot-block">I build AI agents. The annoying part is proving they work, so I build that too.</p>
         <p><span class="prompt">&gt;</span> <span class="boot-cmd" data-cmd="ls ~/roles"></span><span class="cursor" aria-hidden="true">▊</span><br><span class="typed" data-roles='["agent architect","cv engineer","full-stack builder","devops"]' aria-live="off"></span><noscript>agent architect · cv engineer · full-stack builder · devops</noscript></p>
         <p class="open-badge"><span class="pulse" aria-hidden="true"></span>open to work</p>
       </div>
@@ -93,7 +93,7 @@
             <h3>Genesis <span class="badge">flagship</span></h3>
             <span class="stars" data-stars aria-label="GitHub stars"></span>
           </div>
-          <p class="card-desc">Started as a question: can a team of AI agents actually do investment-grade due diligence? Feed it a company (or just an idea) and it comes back with a 14-tab report: business model holes, compliance rules per country, revenue pulled from SEC filings, pricing math, and a red-team panel that argues with your plan. Every claim links its source, and it runs entirely on your machine.</p>
+          <p class="card-desc">AI agents that do startup due diligence. Give it a company or just an idea and it returns a 14-tab report: business model, compliance per country, revenue from SEC filings, pricing, plus a red team that argues back. Every claim links a source. Runs on your machine, no API keys.</p>
           <div class="tags">
             <span>Python</span><span>FastAPI</span><span>Next.js</span><span>multi-agent</span><span>MIT</span>
           </div>
@@ -110,7 +110,7 @@
             <h3>leyp</h3>
             <span class="stars" data-stars aria-label="GitHub stars"></span>
           </div>
-          <p class="card-desc">I kept losing track of job applications, so I built the tool I wanted. Paste a job posting, get a match report, a tailored resume and a cover letter. An agent scans for new postings overnight and sorts replies in a Gmail inbox. One rule above everything: nothing sends until I click approve.</p>
+          <p class="card-desc">A job hunt tool I made for myself. Paste a job posting, it drafts a tailored resume and cover letter, tracks applications, reads my Gmail for replies. Nothing gets sent unless I approve it first.</p>
           <details class="arch">
             <summary>under the hood</summary>
             <pre>$ leyp
@@ -129,7 +129,7 @@ guard   → argon2id + JWE sessions · Google OAuth · free/busy calendar</pre>
             <h3>OpenBroadcast</h3>
             <span class="stars" data-stars aria-label="GitHub stars"></span>
           </div>
-          <p class="card-desc">On video calls I read from notes and everyone can tell. This corrects my eye gaze in real time so I look at the camera, and it runs on a plain CPU at 30fps. Comes with an 8-point calibration wizard and a virtual camera that plugs into Zoom, Teams and OBS.</p>
+          <p class="card-desc">Corrects your eye gaze on video calls so it looks like you're looking at the camera. 30fps on a plain CPU, no GPU. Shows up as a virtual camera in Zoom, Teams, OBS.</p>
           <div class="tags"><span>Python</span><span>OpenCV</span><span>MediaPipe</span><span>virtual camera</span></div>
           <a class="card-link" href="https://github.com/amanvicky/Open-Broadcast" target="_blank" rel="noopener">→ source</a>
         </article>
@@ -139,7 +139,7 @@ guard   → argon2id + JWE sessions · Google OAuth · free/busy calendar</pre>
             <h3>Gazester</h3>
             <span class="stars" data-stars aria-label="GitHub stars"></span>
           </div>
-          <p class="card-desc">The research version of OpenBroadcast. CNN warping for the eye correction, MediaPipe for face tracking, and calibration that figures out your focal length from 30 samples. Has a two-person mode I built to demo it over LAN.</p>
+          <p class="card-desc">Earlier, more research-y version of OpenBroadcast. CNN warping for the correction, MediaPipe for face tracking, and a two-person mode for demoing over LAN.</p>
           <div class="tags"><span>Python</span><span>CNN</span><span>TensorFlow</span><span>MediaPipe</span></div>
           <a class="card-link" href="https://github.com/amanvicky/Gazester" target="_blank" rel="noopener">→ source</a>
         </article>
@@ -150,7 +150,7 @@ guard   → argon2id + JWE sessions · Google OAuth · free/busy calendar</pre>
             <h3>GOD MODE</h3>
             <span class="stars" data-stars aria-label="GitHub stars"></span>
           </div>
-          <p class="card-desc">A Claude skill that pretends to be a software company. A PM writes acceptance criteria, rival dev squads build the thing, red teams try to break it, and the build fails unless the tests pass. First real run shipped a working game in about 23 minutes, tests included.</p>
+          <p class="card-desc">A Claude skill that runs a fake software company to build your project. A PM writes acceptance criteria, rival dev squads build, a red team attacks the result, and it doesn't ship until the tests pass. First run made a working game in ~23 minutes.</p>
           <details class="arch">
             <summary>under the hood</summary>
             <pre>$ god-mode "build X"
@@ -169,7 +169,7 @@ ship    → watcher monitors deps for drift/CVEs · pipeline self-patches</pre>
             <h3>Human-Typer</h3>
             <span class="stars" data-stars aria-label="GitHub stars"></span>
           </div>
-          <p class="card-desc">Types your clipboard into any window with human timing. Typos that get corrected, pauses at punctuation, five speed presets. Made it for demos where machine-perfect typing gives the game away. One AutoHotkey file.</p>
+          <p class="card-desc">AutoHotkey script that types your clipboard with human timing, typos and all. For demos and remote desktop sessions where instant typing looks fake.</p>
           <div class="tags"><span>AutoHotkey</span><span>Windows</span><span>automation</span></div>
           <a class="card-link" href="https://github.com/amanvicky/Human-Typer" target="_blank" rel="noopener">→ source</a>
         </article>
@@ -180,13 +180,13 @@ ship    → watcher monitors deps for drift/CVEs · pipeline self-patches</pre>
       <h2 class="section-title"><span class="prompt">##</span> also_shipped</h2>
       <div class="also reveal">
         <a href="https://github.com/amanvicky/Insta-followers-analyzer">insta-followers-analyzer <span class="dim">— checks Instagram accounts: alive, fake, inactive, fine. Exports CSV.</span></a>
-        <a href="https://github.com/amanvicky/SQL">SQL <span class="dim">— 100 database projects, one per domain, schema through stored procedures.</span></a>
+        <a href="https://github.com/amanvicky/SQL">SQL <span class="dim">— 100 database projects, one per domain.</span></a>
         <a href="https://github.com/amanvicky/cloudformation-practice">cloudformation-practice <span class="dim">— ten templates, one CloudFormation concept each.</span></a>
-        <a href="https://github.com/amanvicky/Tf-EC2">tf-ec2 <span class="dim">— a hundred Terraform EC2 configs, generated for practice.</span></a>
+        <a href="https://github.com/amanvicky/Tf-EC2">tf-ec2 <span class="dim">— a hundred Terraform EC2 configs.</span></a>
         <a href="https://github.com/amanvicky/kubernetes">kubernetes <span class="dim">— notes from fixing broken pods.</span></a>
-        <a href="https://github.com/amanvicky/Jenkins-CI-CD">jenkins-ci-cd <span class="dim">— pipeline notes: SonarQube gates, Nexus, ECR, ECS.</span></a>
-        <a href="https://github.com/amanvicky/Bash-scripting">bash-scripting <span class="dim">— 87 shell scripts, including a multi-OS Tomcat installer.</span></a>
-        <a href="https://github.com/amanvicky/amanvicky">profile <span class="dim">— this whole story, on GitHub.</span></a>
+        <a href="https://github.com/amanvicky/Jenkins-CI-CD">jenkins-ci-cd <span class="dim">— pipeline notes: SonarQube, Nexus, ECR, ECS.</span></a>
+        <a href="https://github.com/amanvicky/Bash-scripting">bash-scripting <span class="dim">— 87 shell scripts, one of them installs Tomcat on three OSes.</span></a>
+        <a href="https://github.com/amanvicky/amanvicky">profile <span class="dim">— all of this on GitHub.</span></a>
       </div>
     </section>
 
@@ -216,19 +216,19 @@ ship    → watcher monitors deps for drift/CVEs · pipeline self-patches</pre>
       <ol class="timeline reveal">
         <li>
           <span class="tl-year">2022</span>
-          <div class="tl-body">Learned DevOps the normal way: a course, a pile of exercise repos (Jenkins, Terraform, Kubernetes, CloudFormation, Bash) and a lot of broken VMs. The repos are still up, unedited.</div>
+          <div class="tl-body">Learned DevOps from a course: Jenkins, Terraform, Kubernetes, CloudFormation, Bash. The repos are still up, unedited.</div>
         </li>
         <li>
           <span class="tl-year">2023–25</span>
-          <div class="tl-body">Went deep on Python and SQL. Wrote 100 small database projects, one per domain, schema through stored procedures. Still the thing I point people to when they ask if I can actually finish things.</div>
+          <div class="tl-body">Python and SQL. 100 database projects, one per domain. Still the thing I point to when someone asks if I finish what I start.</div>
         </li>
         <li>
           <span class="tl-year">2026</span>
-          <div class="tl-body">The agent year. Built Genesis, leyp, GOD MODE and two computer-vision tools, and started pushing everything to GitHub as I go.</div>
+          <div class="tl-body">The agent year. Genesis, leyp, GOD MODE, two CV tools. Everything pushed as I went.</div>
         </li>
         <li>
           <span class="tl-year">now</span>
-          <div class="tl-body">Job hunting and shipping small tools most weeks. If you're hiring, the LinkedIn button below works.</div>
+          <div class="tl-body">Job hunting, building small tools. The LinkedIn button below works.</div>
         </li>
       </ol>
     </section>
@@ -236,9 +236,9 @@ ship    → watcher monitors deps for drift/CVEs · pipeline self-patches</pre>
     <section class="section" id="about">
       <h2 class="section-title"><span class="prompt">##</span> about</h2>
       <div class="about reveal">
-        <p>I got into this through DevOps: Jenkins, Terraform, Kubernetes, AWS. Those repos from 2022 are still public, unedited, course notes and all. In 2026 I moved to agentic AI and shipped Genesis, leyp and GOD MODE in the space of a few months.</p>
-        <p>The thing I care about is proof. If a project on this page claims something, there's a test run or a screenshot behind it. That's why leyp refuses to send anything until a human clicks approve, and why GOD MODE fails builds that can't show passing tests.</p>
-        <p>Right now I'm job hunting and shipping small tools most weeks. The graph below is my actual GitHub activity.</p>
+        <p>I got into code through DevOps. Jenkins, Terraform, Kubernetes, AWS. The repos from 2022 are still up, unedited. Then in 2026 I found agents and ended up building most of what's on this page.</p>
+        <p>What I care about is whether things actually work. I don't publish demos. If a repo claims something, there's a test or a screenshot inside it somewhere. leyp won't send an email without my approval, GOD MODE fails builds without passing tests, and Genesis links a source for every claim it makes.</p>
+        <p>Right now I'm job hunting and building small tools. The graph below is my actual GitHub activity.</p>
         <div class="heatmap reveal">
           <img src="https://ghchart.rshah.org/00e5a0/amanvicky" alt="My GitHub contribution graph for the last 12 months" loading="lazy" onerror="this.closest('.heatmap').classList.add('hidden')">
         </div>
