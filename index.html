@@ -44,11 +44,11 @@
         <span class="terminal-title">aman@github: ~/portfolio</span>
       </div>
       <div class="terminal-body">
-        <p><span class="prompt">&gt;</span> whoami</p>
-        <h1 class="hero-name">AMAN ELUGAM</h1>
-        <p><span class="prompt">&gt;</span> cat mission.txt</p>
-        <p class="hero-mission">I build agentic AI systems that end in <span class="hl">decisions</span>, not <span class="strike">vibes</span>.</p>
-        <p><span class="prompt">&gt;</span> ls ~/roles <span class="cursor" aria-hidden="true">▊</span><br><span class="typed" data-roles='["agent architect","cv engineer","full-stack builder","devops"]' aria-live="off"></span><noscript>agent architect · cv engineer · full-stack builder · devops</noscript></p>
+        <p><span class="prompt">&gt;</span> <span class="boot-cmd" data-cmd="whoami"></span><span class="cursor" aria-hidden="true">▊</span></p>
+        <h1 class="hero-name boot-block">AMAN ELUGAM</h1>
+        <p><span class="prompt">&gt;</span> <span class="boot-cmd" data-cmd="cat mission.txt"></span><span class="cursor" aria-hidden="true">▊</span></p>
+        <p class="hero-mission boot-block">I build agentic AI systems that end in <span class="hl">decisions</span>, not <span class="strike">vibes</span>.</p>
+        <p><span class="prompt">&gt;</span> <span class="boot-cmd" data-cmd="ls ~/roles"></span><span class="cursor" aria-hidden="true">▊</span><br><span class="typed" data-roles='["agent architect","cv engineer","full-stack builder","devops"]' aria-live="off"></span><noscript>agent architect · cv engineer · full-stack builder · devops</noscript></p>
       </div>
     </div>
     <div class="hero-cta reveal">
@@ -56,7 +56,12 @@
       <a class="btn" href="https://github.com/amanvicky" target="_blank" rel="noopener">[ github ]</a>
       <a class="btn" href="https://www.linkedin.com/in/aman-elugam/" target="_blank" rel="noopener">[ linkedin ]</a>
     </div>
-    <p class="hero-note reveal dim">// 20 public repos · 100 SQL projects · everything below links to source</p>
+    <div class="stats reveal" aria-label="GitHub stats">
+      <div class="stat"><span class="stat-num" data-stat="repos">20</span><span class="stat-label">public repos</span></div>
+      <div class="stat"><span class="stat-num" data-stat="followers">4</span><span class="stat-label">followers</span></div>
+      <div class="stat"><span class="stat-num" data-stat="stars">0</span><span class="stat-label">stars earned</span></div>
+      <div class="stat"><span class="stat-num" data-stat="sql">100</span><span class="stat-label">sql projects</span></div>
+    </div>
   </header>
 
   <main>
@@ -187,12 +192,38 @@ ship    → watcher monitors deps for drift/CVEs · pipeline self-patches</pre>
       </div>
     </section>
 
+    <section class="section" id="journey">
+      <h2 class="section-title"><span class="prompt">##</span> journey</h2>
+      <ol class="timeline reveal">
+        <li>
+          <span class="tl-year">2022</span>
+          <div class="tl-body"><strong>DevOps foundations.</strong> Jenkins pipelines with SonarQube quality gates, Terraform × EC2, Kubernetes objects broken and fixed in real clusters, CloudFormation, Bash automation. <span class="dim">// the repos that taught me infra</span></div>
+        </li>
+        <li>
+          <span class="tl-year">2023–25</span>
+          <div class="tl-body"><strong>Python + data depth.</strong> 100 end-to-end SQL projects across real-world domains — hospital to core banking to crypto exchange — plus Windows automation tooling.</div>
+        </li>
+        <li>
+          <span class="tl-year">2026</span>
+          <div class="tl-body"><strong>Agentic AI era.</strong> Genesis — 13-agent venture dossiers · leyp — human-in-the-loop job copilot · GOD MODE — self-testing dev squads · real-time eye-gaze CV. <span class="dim">// shipping weekly</span></div>
+        </li>
+        <li>
+          <span class="tl-year">now</span>
+          <div class="tl-body"><strong>Building in public.</strong> New agents weekly, this site, and <span class="hl">open to opportunities</span> where proof matters more than promises.</div>
+        </li>
+      </ol>
+    </section>
+
     <section class="section" id="about">
       <h2 class="section-title"><span class="prompt">##</span> about</h2>
       <div class="about reveal">
         <p>I started in <strong>DevOps</strong> — Jenkins pipelines with SonarQube gates, Terraform and CloudFormation, Kubernetes objects broken and fixed in real clusters — then went deeper into <strong>agentic AI</strong>: systems where agents plan, build, attack each other's work, and don't ship anything they can't prove.</p>
         <p>My rule across all of it: <span class="hl">proof or it didn't happen</span>. Every claim carries executed test output, a screenshot, or a source link. That's why Genesis ships with a proof-capture script, and why leyp's core feature is a human approval button.</p>
         <p class="dim">// currently: shipping new agents weekly, building a portfolio you are looking at right now</p>
+        <div class="heatmap reveal">
+          <img src="https://ghchart.rshah.org/00e5a0/amanvicky" alt="Aman's GitHub contribution graph — every square is a real day of commits" loading="lazy" onerror="this.closest('.heatmap').classList.add('hidden')">
+          <p class="dim heatmap-cap">// the contribution graph — real days, real commits, no green-washing</p>
+        </div>
       </div>
     </section>
 
@@ -211,6 +242,8 @@ ship    → watcher monitors deps for drift/CVEs · pipeline self-patches</pre>
     <span class="dim">built without a framework — <a href="https://github.com/amanvicky/amanvicky.github.io" target="_blank" rel="noopener">view source</a></span>
     <a href="#top" class="dim">↑ top</a>
   </footer>
+
+  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 
   <script src="script.js" defer></script>
 </body>
