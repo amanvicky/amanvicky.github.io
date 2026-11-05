@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>og-image source — render at exactly 1200x630</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    font-family: "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+    background:
+      linear-gradient(rgba(0,229,160,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,229,160,0.05) 1px, transparent 1px),
+      radial-gradient(ellipse at 75% 20%, rgba(0,229,160,0.09), transparent 55%),
+      #0a0e14;
+    color: #d6e2f0;
+    display: grid;
+    place-items: center;
+  }
+  .wrap { width: 1020px; }
+  .terminal {
+    background: #0d1219;
+    border: 1px solid #1e2636;
+    border-radius: 14px;
+    box-shadow: 0 0 0 1px rgba(0,229,160,0.1), 0 30px 70px rgba(0,0,0,0.6);
+    overflow: hidden;
+  }
+  .bar { display: flex; align-items: center; gap: 9px; padding: 14px 20px; background: #0b1017; border-bottom: 1px solid #1e2636; }
+  .dot { width: 14px; height: 14px; border-radius: 50%; }
+  .r { background: #ff5f56; } .y { background: #ffbd2e; } .g { background: #27c93f; }
+  .title { margin-left: 10px; font-size: 17px; color: #7d8ca3; }
+  .body { padding: 34px 40px 38px; }
+  .cmd { font-size: 22px; color: #7d8ca3; }
+  .cmd b { color: #00e5a0; font-weight: 600; }
+  h1 { font-size: 64px; letter-spacing: 0.05em; color: #fff; margin: 14px 0 20px; text-shadow: 0 0 28px rgba(0,229,160,0.4); }
+  .mission { font-size: 28px; line-height: 1.5; }
+  .mission .hl { color: #00e5a0; }
+  .mission .strike { color: #7d8ca3; text-decoration: line-through; text-decoration-color: #f87171; }
+  .row { display: flex; gap: 12px; margin-top: 30px; font-size: 19px; }
+  .chip { border: 1px solid rgba(0,229,160,0.45); color: #00e5a0; border-radius: 8px; padding: 7px 16px; }
+  .chip.dim2 { border-color: #1e2636; color: #d6e2f0; }
+  .handles { display: flex; justify-content: space-between; margin-top: 26px; font-size: 18px; color: #22d3ee; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="terminal">
+      <div class="bar">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="title">aman@github: ~/portfolio</span>
+      </div>
+      <div class="body">
+        <div class="cmd">&gt; <b>whoami</b></div>
+        <h1>AMAN ELUGAM</h1>
+        <div class="mission">I build agentic AI systems that end in <span class="hl">decisions</span>, not <span class="strike">vibes</span>.</div>
+        <div class="row">
+          <span class="chip">Genesis · 13-agent dossiers</span>
+          <span class="chip">leyp · job copilot</span>
+          <span class="chip dim2">GOD MODE</span>
+          <span class="chip dim2">OpenBroadcast</span>
+        </div>
+        <div class="handles">
+          <span>github.com/amanvicky</span>
+          <span>linkedin.com/in/aman-elugam</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

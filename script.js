@@ -155,4 +155,184 @@
         .catch(function () { /* static fallback: element stays empty, hidden by CSS */ });
     });
   }
+
+  /* ── 7. interactive terminal (ctrl+k / nav button) ─────────────── */
+  var overlay = document.getElementById("termOverlay");
+  var out = document.getElementById("termOut");
+  var input = document.getElementById("termInput");
+  var REPOS = {
+    "1": "Genesis-Business-Decoding-Engine", genesis: "Genesis-Business-Decoding-Engine",
+    "2": "leyp", leyp: "leyp",
+    "3": "Open-Broadcast", openbroadcast: "Open-Broadcast", broadcast: "Open-Broadcast",
+    "4": "Gazester", gazester: "Gazester",
+    "5": "Skill-God-Mode", godmode: "Skill-God-Mode", "god mode": "Skill-God-Mode",
+    "6": "Human-Typer", humantyper: "Human-Typer",
+    analyzer: "Insta-followers-analyzer",
+    profile: "amanvicky",
+    portfolio: "amanvicky.github.io"
+  };
+  var FEATURED = ["Genesis-Business-Decoding-Engine", "leyp", "Open-Broadcast", "Gazester", "Skill-God-Mode", "Human-Typer"];
+  var queue = [], pumping = false;
+
+  function print(text, cls) {
+    queue.push({ text: text, cls: cls || "" });
+    if (!pumping) pump();
+  }
+  function pump() {
+    pumping = true;
+    (function nextLine() {
+      var item = queue.shift();
+      if (!item) { pumping = false; return; }
+      var div = document.createElement("div");
+      div.className = "term-line " + item.cls;
+      div.textContent = item.text;
+      out.appendChild(div);
+      out.scrollTop = out.scrollHeight;
+      setTimeout(nextLine, reduceMotion ? 0 : 26);
+    })();
+  }
+  function openRepo(key) {
+    var name = REPOS[key.toLowerCase()];
+    if (!name) { print("no such repo: " + key + " — try 'projects'", "t-err"); return; }
+    print("opening github.com/amanvicky/" + name + " ...", "t-ok");
+    window.open("https://github.com/amanvicky/" + name, "_blank", "noopener");
+  }
+  var COMMANDS = {
+    help: function () {
+      print("available commands:", "t-dim");
+      print("  whoami            who is this guy");
+      print("  projects          the featured six");
+      print("  open <n|name>     open a repo on github (1-6 or genesis/leyp/...)");
+      print("  stack             the stack, grouped");
+      print("  stats             live github numbers");
+      print("  journey           2022 -> now");
+      print("  contact           how to reach me");
+      print("  goto <section>    scroll the page (projects/stack/about/contact)");
+      print("  clear · exit      housekeeping");
+      print("  sudo hire aman    try it", "t-dim");
+    },
+    whoami: function () {
+      print("Aman Elugam — agentic AI engineer.");
+      print("I build agent systems that end in decisions, not vibes.", "t-dim");
+    },
+    projects: function () {
+      print("featured work:", "t-dim");
+      print("  1  Genesis        13-agent venture-intelligence dossiers");
+      print("  2  leyp           human-in-the-loop job-hunt copilot");
+      print("  3  OpenBroadcast  CPU-only real-time gaze correction");
+      print("  4  Gazester       CNN-warping gaze correction");
+      print("  5  GOD MODE       AI software company in one skill file");
+      print("  6  Human-Typer    human-like typing for Windows");
+      print("run: open <number>", "t-dim");
+    },
+    stack: function () {
+      print("ai_agents   : multi-agent · tool use · OpenAI/Anthropic/Mistral/Ollama");
+      print("languages   : Python · TypeScript · SQL · Bash · HCL");
+      print("web         : Next.js · React · FastAPI · Flask · Prisma");
+      print("devops      : Docker · Kubernetes · Terraform · Jenkins · AWS");
+      print("cv          : MediaPipe · OpenCV · TensorFlow · ONNX");
+    },
+    stats: function () {
+      fetch("https://api.github.com/users/amanvicky")
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (u) {
+          if (!u) { print("github api is not answering right now.", "t-err"); return; }
+          print("public repos: " + u.public_repos + " · followers: " + u.followers, "t-ok");
+          print("everything links to source — see 'projects'", "t-dim");
+        })
+        .catch(function () { print("network says no.", "t-err"); });
+    },
+    journey: function () {
+      print("2022    devops foundations — jenkins · terraform · k8s · aws");
+      print("2023-25 python + data — 100 sql projects, automation tooling");
+      print("2026    agentic AI — genesis · leyp · god mode · cv tools");
+      print("now     shipping weekly · open to opportunities", "t-ok");
+    },
+    contact: function () {
+      print("github   : https://github.com/amanvicky");
+      print("linkedin : https://www.linkedin.com/in/aman-elugam/");
+      print("(or run: sudo hire aman)", "t-dim");
+    },
+    clear: function () { out.textContent = ""; },
+    exit: function () { closeTerm(); },
+    sudo: function (args) {
+      if (args.trim().toLowerCase() === "hire aman") {
+        print("[sudo] permission granted.", "t-ok");
+        print("opening linkedin — let's talk.", "t-ok");
+        setTimeout(function () {
+          window.open("https://www.linkedin.com/in/aman-elugam/", "_blank", "noopener");
+        }, 700);
+      } else {
+        print("sudo: did you mean 'sudo hire aman'?", "t-err");
+      }
+    },
+    goto: function (args) {
+      var id = args.trim().toLowerCase();
+      var s = document.getElementById(id);
+      if (!s) { print("sections: projects · stack · about · contact", "t-err"); return; }
+      closeTerm();
+      document.getElementById(id).scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+    }
+  };
+  COMMANDS.ls = COMMANDS.projects;
+  COMMANDS.socials = COMMANDS.contact;
+  COMMANDS.repos = COMMANDS.projects;
+
+  function runLine(raw) {
+    var line = raw.trim();
+    print("visitor@amanvicky:~$ " + line, "t-in");
+    if (!line) return;
+    var space = line.indexOf(" ");
+    var cmd = (space === -1 ? line : line.slice(0, space)).toLowerCase();
+    var args = space === -1 ? "" : line.slice(space + 1);
+    if (cmd === "open") { openRepo(args || ""); return; }
+    var fn = COMMANDS[cmd];
+    if (fn) fn(args);
+    else print("command not found: " + cmd + " — try 'help'", "t-err");
+  }
+
+  function openTerm() {
+    overlay.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+    if (!out.textContent) {
+      print("amanvicky.github.io terminal — v1.0", "t-dim");
+      print("type 'help' to see what this can do.", "t-dim");
+    }
+    setTimeout(function () { input.focus(); }, 50);
+  }
+  function closeTerm() {
+    overlay.classList.add("hidden");
+    document.body.style.overflow = "";
+    input.blur();
+  }
+  var termBtn = document.getElementById("termBtn");
+  if (termBtn) termBtn.addEventListener("click", openTerm);
+  var hintBtn = document.querySelector("[data-open-terminal]");
+  if (hintBtn) hintBtn.addEventListener("click", openTerm);
+  var termClose = document.getElementById("termClose");
+  if (termClose) termClose.addEventListener("click", closeTerm);
+  overlay.addEventListener("click", function (e) { if (e.target === overlay) closeTerm(); });
+  document.addEventListener("keydown", function (e) {
+    if ((e.ctrlKey || e.metaKey) && (e.key === "k" || e.key === "K")) {
+      e.preventDefault();
+      overlay.classList.contains("hidden") ? openTerm() : closeTerm();
+    }
+    if (e.key === "Escape" && !overlay.classList.contains("hidden")) closeTerm();
+  });
+  var history = [], hIndex = -1;
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      var v = input.value;
+      if (v.trim()) { history.unshift(v); hIndex = -1; }
+      input.value = "";
+      runLine(v);
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      if (hIndex < history.length - 1) { hIndex += 1; input.value = history[hIndex]; }
+    } else if (e.key === "ArrowDown") {
+      e.preventDefault();
+      if (hIndex > 0) { hIndex -= 1; input.value = history[hIndex]; }
+      else { hIndex = -1; input.value = ""; }
+    }
+  });
 })();
