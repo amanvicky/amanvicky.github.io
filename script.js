@@ -92,7 +92,6 @@
     .then(function (u) {
       if (!u) return;
       setStat("repos", u.public_repos);
-      setStat("followers", u.followers);
     })
     .catch(function () {});
   fetch("https://api.github.com/users/amanvicky/repos?per_page=100")
@@ -258,7 +257,7 @@
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (u) {
           if (!u) { print("github api is not answering right now.", "t-err"); return; }
-          print("public repos: " + u.public_repos + " · followers: " + u.followers, "t-ok");
+          print("public repos: " + u.public_repos + " · sql projects: 100", "t-ok");
           print("everything links to source — see 'projects'", "t-dim");
         })
         .catch(function () { print("network says no.", "t-err"); });
