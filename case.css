@@ -1,6 +1,6 @@
 /* case-study pages share style.css + these */
 .case-head { margin: 1.5rem 0 1rem; }
-.case-head h1 { font-size: clamp(1.5rem, 4.5vw, 2.2rem); color: #fff; }
+.case-head h1 { font-size: clamp(1.5rem, 4.5vw, 2.2rem); color: var(--heading); }
 .case-head .tags { margin: 0.8rem 0; }
 .case-links { display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 1rem 0 0.4rem; }
 .case-section { margin-bottom: 1.6rem; }

@@ -133,7 +133,26 @@
     });
   }
 
-  /* ── 6. live star counts (graceful fallback: stays hidden) ─────── */
+  /* ── 7. theme switcher ─────────────────────────────────────────── */
+  var THEMES = ["terminal", "paper", "synth", "ocean", "ember"];
+  try {
+    var savedTheme = localStorage.getItem("theme");
+    if (THEMES.indexOf(savedTheme) > 0) document.body.dataset.theme = savedTheme;
+  } catch (e) {}
+  var themeBtn = document.getElementById("themeBtn");
+  if (themeBtn) {
+    themeBtn.addEventListener("click", function () {
+      var cur = document.body.dataset.theme || "terminal";
+      var next = THEMES[(THEMES.indexOf(cur) + 1) % THEMES.length];
+      if (next === "terminal") delete document.body.dataset.theme;
+      else document.body.dataset.theme = next;
+      themeBtn.title = "theme: " + next;
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+    themeBtn.title = "theme: " + (document.body.dataset.theme || "terminal");
+  }
+
+  /* ── 8. live star counts (graceful fallback: stays hidden) ─────── */
   var starsEls = Array.prototype.slice.call(document.querySelectorAll("[data-stars]"));
   if (starsEls.length) {
     starsEls.forEach(function (el) {
