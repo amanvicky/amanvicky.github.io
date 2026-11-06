@@ -134,7 +134,7 @@
   }
 
   /* ── 7. theme switcher ─────────────────────────────────────────── */
-  var THEMES = ["terminal", "paper", "synth", "ocean", "ember"];
+  var THEMES = ["terminal", "paper", "synth", "ocean", "ember", "rose", "mono"];
   try {
     var savedTheme = localStorage.getItem("theme");
     if (THEMES.indexOf(savedTheme) > 0) document.body.dataset.theme = savedTheme;
