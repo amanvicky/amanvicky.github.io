@@ -392,17 +392,6 @@ details.arch pre {
 .about { display: grid; gap: 0.9rem; max-width: 780px; font-size: 0.95rem; }
 .about .hl { font-weight: 600; }
 
-.heatmap { margin-top: 1.2rem; }
-.heatmap img {
-  width: 100%;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--bg-2);
-  padding: 0.6rem;
-}
-.heatmap.hidden { display: none; }
-.heatmap-cap { margin-top: 0.5rem; font-size: 0.8rem; }
-
 /* ── journey timeline ────────────────────────────────────────────── */
 .timeline {
   list-style: none;
