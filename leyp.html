@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>leyp — case study | Aman Elugam</title>
+  <meta name="description" content="How leyp works: a self-hosted job-hunt copilot with a 12-section design spec, contract tests, and a hard rule that nothing sends without human approval.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0e14'/%3E%3Ctext x='12' y='42' font-family='monospace' font-size='26' fill='%2300e5a0'%3E%26gt;_%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="case.css">
+</head>
+<body>
+  <main class="section">
+    <div class="case-head">
+      <p class="dim"><a href="/">← back</a> · case study</p>
+      <h1>leyp — the job hunter</h1>
+      <div class="tags"><span>Next.js 16</span><span>React 19</span><span>Prisma 7</span><span>strict TypeScript</span><span>Vitest</span><span>Playwright</span></div>
+      <div class="case-links">
+        <a class="btn btn-primary" href="https://github.com/amanvicky/leyp" target="_blank" rel="noopener">[ source ]</a>
+        <a class="btn" href="https://github.com/amanvicky/leyp/blob/main/docs/superpowers/specs/2026-11-02-leyp-design.md" target="_blank" rel="noopener">[ design spec ]</a>
+      </div>
+    </div>
+
+    <section class="case-section">
+      <h2>the problem</h2>
+      <p>Job hunting is a mess of tabs: postings here, resume versions there, replies in Gmail, and no idea which application got which resume. Existing tools either spray applications automatically (and burn your reputation) or do nothing but store data. I wanted a copilot that drafts everything and sends nothing.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>the rule</h2>
+      <p><strong>The human approves every send.</strong> The AI drafts, scores and classifies; the person decides. Every AI feature in the app is built around that constraint.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>what it does</h2>
+      <ul>
+        <li><strong>pipeline:</strong> paste a posting → requirements extracted → match report against your profile → tailored resume + cover letter → refine chat with undo → version history</li>
+        <li><strong>profiles:</strong> 9 profile models, 6 resume themes, PDF export, resume import</li>
+        <li><strong>agent:</strong> nightly scan scores new postings and surfaces candidates to approve or dismiss</li>
+        <li><strong>inbox:</strong> Gmail sync, reply classification, draft replies with flagged gaps</li>
+        <li><strong>job search:</strong> Adzuna, JSearch and FreeHire adapters with 30-minute caching and quota-aware failures</li>
+        <li><strong>calendar:</strong> Google OAuth with encrypted token storage, free/busy checks, interview events</li>
+        <li><strong>eight AI tasks:</strong> match-requirements, tailor-resume, write-cover-letter, write-email, refine-chat, score-posting, classify-reply, draft-reply — pluggable across OpenAI, Anthropic, Mistral and local Ollama</li>
+      </ul>
+    </section>
+
+    <section class="case-section">
+      <h2>engineering decisions</h2>
+      <ul>
+        <li>Next.js 16 App Router + React 19 in strict TypeScript — no <code>any</code>, no suppressions</li>
+        <li>Prisma 7 over better-sqlite3 for zero-ops local storage; Postgres later</li>
+        <li>Sessions are JWE with argon2id password hashing; Google tokens encrypted at rest</li>
+        <li>Test pyramid: Vitest unit + database + contract tests, Playwright E2E</li>
+        <li>zod schemas at every boundary: forms, API routes, AI outputs, adapters</li>
+        <li>a written design spec (12 sections, 6 phases) committed before implementation</li>
+      </ul>
+      <pre>$ npm test          # unit + DB + contract suites
+$ npm run test:e2e  # Playwright
+$ npm run typecheck # tsc --noEmit</pre>
+    </section>
+
+    <div class="back-row">
+      <a class="btn btn-primary" href="/">[ back to portfolio ]</a>
+      <a class="btn" href="https://amanvicky.github.io/openbroadcast-web/" target="_blank" rel="noopener">[ try my browser demo instead ]</a>
+    </div>
+  </main>
+</body>
+</html>

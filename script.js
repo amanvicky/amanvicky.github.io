@@ -207,6 +207,8 @@
       print("  stats             live github numbers");
       print("  journey           2022 -> now");
       print("  contact           how to reach me");
+      print("  resume            open the resume page");
+      print("  case <name>       case study (genesis/leyp/godmode)");
       print("  goto <section>    scroll the page (projects/stack/about/contact)");
       print("  clear · exit      housekeeping");
       print("  sudo hire aman    try it", "t-dim");
@@ -252,6 +254,17 @@
       print("github   : https://github.com/amanvicky");
       print("linkedin : https://www.linkedin.com/in/aman-elugam/");
       print("(or run: sudo hire aman)", "t-dim");
+    },
+    resume: function () {
+      print("opening the resume page — print it to PDF from there.", "t-ok");
+      window.open("https://amanvicky.github.io/resume.html", "_blank", "noopener");
+    },
+    case: function (args) {
+      var pages = { genesis: "genesis.html", leyp: "leyp.html", godmode: "godmode.html", "god mode": "godmode.html" };
+      var p = pages[args.trim().toLowerCase()];
+      if (!p) { print("case studies: genesis · leyp · godmode", "t-err"); return; }
+      print("opening the " + args.trim() + " case study…", "t-ok");
+      window.open("https://amanvicky.github.io/" + p, "_blank", "noopener");
     },
     clear: function () { out.textContent = ""; },
     exit: function () { closeTerm(); },

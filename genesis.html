@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genesis — case study | Aman Elugam</title>
+  <meta name="description" content="How Genesis works: a team of AI agents that produces 14-tab venture due-diligence reports, fully local, every claim sourced.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0e14'/%3E%3Ctext x='12' y='42' font-family='monospace' font-size='26' fill='%2300e5a0'%3E%26gt;_%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="case.css">
+</head>
+<body>
+  <main class="section">
+    <div class="case-head">
+      <p class="dim"><a href="/">← back</a> · case study</p>
+      <h1>Genesis — Business Decoding Engine</h1>
+      <div class="tags"><span>Python</span><span>FastAPI</span><span>Next.js</span><span>multi-agent</span><span>CI</span><span>MIT</span></div>
+      <div class="case-links">
+        <a class="btn btn-primary" href="https://github.com/amanvicky/Genesis-Business-Decoding-Engine" target="_blank" rel="noopener">[ source ]</a>
+        <a class="btn" href="https://github.com/amanvicky/Genesis-Business-Decoding-Engine/releases" target="_blank" rel="noopener">[ v1.1.0 release ]</a>
+      </div>
+    </div>
+
+    <section class="case-section">
+      <h2>the problem</h2>
+      <p>Founders and analysts pay a lot for venture due diligence, and the AI tools that promise it tend to hallucinate: confident answers, no sources. I wanted the opposite — an agent team where every claim carries the link it came from, and where the final output isn't a vibe but a decision.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>what it does</h2>
+      <p>Feed it a company (Stripe, Razorpay, your competitor) or a rough idea. Thirteen agents research and argue, then the app returns a 14-tab dossier:</p>
+      <ul>
+        <li>business model viability and structural verdict</li>
+        <li>compliance traps, per country and state</li>
+        <li>why similar companies died, and real revenue from SEC filings</li>
+        <li>editable pricing math, burn and breakeven</li>
+        <li>user complaints, free distribution channels, starter code</li>
+        <li>a red-team panel that argues with your plan</li>
+        <li>a chat panel that answers follow-ups using your own numbers</li>
+        <li>a verdict protocol that forces a GO or NO-GO so the dossier actually ends</li>
+      </ul>
+      <p>No API keys, no accounts. Nothing leaves your machine.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>how it's built</h2>
+      <p>FastAPI on the back, Next.js on the front, one Python entry point that hides all of it:</p>
+      <pre>$ python genesis.py            # installs venv + deps, builds, runs in background
+$ python genesis.py status     # what's running
+$ python genesis.py logs api   # tail logs
+$ python genesis.py doctor     # pre-flight check
+$ python genesis.py stop       # shut it down
+$ python genesis.py uninstall  # stop + clean up (--deep removes venv too)</pre>
+      <p>A watchdog restarts crashed services, there's an optional Tor mode for anonymous research (<code>--no-tor</code> to skip it), and CI runs the test suite on every push. v1.1.0 is tagged and released.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>proof, not promises</h2>
+      <p>The repo ships <code>proofs/capture.mjs</code>: one command regenerates all 14 screenshots below from the running app. If a future change breaks the UI, the proofs break with it.</p>
+      <div class="shots">
+        <figure>
+          <img src="https://raw.githubusercontent.com/amanvicky/Genesis-Business-Decoding-Engine/main/proofs/screenshots/01_landing_input_panel.png" alt="Genesis landing and input panel" loading="lazy">
+          <figcaption>landing — type a company or an idea</figcaption>
+        </figure>
+        <figure>
+          <img src="https://raw.githubusercontent.com/amanvicky/Genesis-Business-Decoding-Engine/main/proofs/screenshots/02_agent_console_live.png" alt="Agent console streaming steps live" loading="lazy">
+          <figcaption>agent console mid-decode — every step streams</figcaption>
+        </figure>
+        <figure>
+          <img src="https://raw.githubusercontent.com/amanvicky/Genesis-Business-Decoding-Engine/main/proofs/screenshots/05_compliance_matrix.png" alt="Compliance matrix by country" loading="lazy">
+          <figcaption>compliance matrix, per country</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="back-row">
+      <a class="btn btn-primary" href="/">[ back to portfolio ]</a>
+      <a class="btn" href="https://amanvicky.github.io/openbroadcast-web/" target="_blank" rel="noopener">[ try my browser demo instead ]</a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GOD MODE — case study | Aman Elugam</title>
+  <meta name="description" content="How GOD MODE works: acceptance criteria compiled to an executable gate, rival dev squads, red-team waves, and a ship decision made by tests, not vibes.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0e14'/%3E%3Ctext x='12' y='42' font-family='monospace' font-size='26' fill='%2300e5a0'%3E%26gt;_%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="case.css">
+</head>
+<body>
+  <main class="section">
+    <div class="case-head">
+      <p class="dim"><a href="/">← back</a> · case study</p>
+      <h1>GOD MODE</h1>
+      <div class="tags"><span>Claude skill</span><span>zero runtime deps</span><span>MIT</span><span>v1.5</span></div>
+      <div class="case-links">
+        <a class="btn btn-primary" href="https://github.com/amanvicky/Skill-God-Mode" target="_blank" rel="noopener">[ source ]</a>
+      </div>
+    </div>
+
+    <section class="case-section">
+      <h2>the idea</h2>
+      <p>AI coding sessions usually end the same way: "this should work". GOD MODE is a single Claude skill file that refuses to end there. It simulates a whole software company whose only law is <strong>"proof or it didn't happen"</strong> — every quality claim must carry executed test output, benchmarks or scan results.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>the pipeline</h2>
+      <ul>
+        <li><strong>PM:</strong> turns your idea into machine-checkable acceptance criteria, compiled into an executable gate script (<code>dod.sh</code>). Shipping literally means exit code 0.</li>
+        <li><strong>rival dev squads:</strong> multiple squads build competing implementations; a judge harvests the best parts of each.</li>
+        <li><strong>assault wave:</strong> QA executes the suites, SRE runs benchmarks and chaos tests, security audits, a red team attacks from seven user perspectives, and auditors debate the results.</li>
+        <li><strong>CEO scoring:</strong> the result is scored 0–10 against a bar of 8.5. Below the bar produces a numbered fix-list and escalating pressure: coach, deadlines, then enforced rewrite by a fresh developer.</li>
+        <li><strong>ship + watcher:</strong> after the gate passes, a scheduled watcher monitors dependencies for drift and CVEs and patches the pipeline itself.</li>
+      </ul>
+    </section>
+
+    <section class="case-section">
+      <h2>the mechanisms that did real work</h2>
+      <ul>
+        <li><strong>differential testing</strong> — critical logic written twice by different algorithms, fuzzed identically, outputs must match. Caught 2 of 3 real bugs in the first run that the normal suites passed clean.</li>
+        <li><strong>mechanical ship gate</strong> — run #1 finished at 9/9 suites, 100% line coverage, DOD:PASS.</li>
+        <li><strong>recon gate</strong> — every dependency checked against live reality (alive? licensed? CVEs? docs match?) before use; run #1 ended up choosing a zero-dependency strategy because of it.</li>
+        <li><strong>self-rewrite</strong> — after every project the skill patches its own rulebook; run #1 added 7 binding rules.</li>
+      </ul>
+      <p>First production run: a complete zero-dependency 2048 game — logic, twin implementation, 9 test suites, UI, docs — from kickoff to shipped bundle in about 23 minutes, including three found-and-fixed bugs and the full audit trail.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>one mode, three situations</h2>
+      <p>Building from scratch gets the full pipeline. Handed broken or legacy code, it runs archaeology first — behavior pinned by characterization tests, then smallest-change-first repairs under a behavior-lock. Under deadline pressure it shrinks scope until the remaining core can be finished to the same standard: a complete paperweight, never a half-polished sword, with an exact graduation path for the rest.</p>
+    </section>
+
+    <div class="back-row">
+      <a class="btn btn-primary" href="/">[ back to portfolio ]</a>
+      <a class="btn" href="https://amanvicky.github.io/openbroadcast-web/" target="_blank" rel="noopener">[ try my browser demo instead ]</a>
+    </div>
+  </main>
+</body>
+</html>

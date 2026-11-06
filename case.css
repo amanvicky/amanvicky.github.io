@@ -1,0 +1,28 @@
+/* case-study pages share style.css + these */
+.case-head { margin: 1.5rem 0 1rem; }
+.case-head h1 { font-size: clamp(1.5rem, 4.5vw, 2.2rem); color: #fff; }
+.case-head .tags { margin: 0.8rem 0; }
+.case-links { display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 1rem 0 0.4rem; }
+.case-section { margin-bottom: 1.6rem; }
+.case-section h2 { font-size: 1rem; color: var(--green); margin-bottom: 0.5rem; }
+.case-section p, .case-section li { font-size: 0.92rem; }
+.case-section ul, .case-section ol { padding-left: 1.3rem; display: grid; gap: 0.3rem; }
+.case-section pre {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.8rem;
+  overflow-x: auto;
+  margin: 0.6rem 0;
+}
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.8rem; margin: 0.8rem 0; }
+.shots img {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: block;
+}
+.shots figure { display: grid; gap: 0.3rem; }
+.shots figcaption { font-size: 0.75rem; color: var(--muted); }
+.back-row { display: flex; gap: 1rem; margin: 1.5rem 0; }
