@@ -6,6 +6,20 @@ Personal portfolio of **Aman Elugam** — agentic AI systems that end in decisio
 
 Zero-framework static site: `index.html` + `styles.css` + `script.js`. No build step, no dependencies.
 
+## Pages
+
+| Page | What it is |
+|---|---|
+| `/` | Home — boot-sequence hero, live GitHub stats, featured projects |
+| `/genesis.html` | Case study: the Genesis venture-intelligence engine |
+| `/leyp.html` | Case study: the job-hunt copilot |
+| `/godmode.html` | Case study: GOD MODE, the AI software company in a Claude skill |
+| `/404.html` | Terminal-styled 404 |
+
+## Themes
+
+Nine switchable themes — terminal, paper, synth, ocean, ember, rose, mono, midnight, solar — cycled from the footer, persisted in `localStorage`, applied on every page before first paint so there's no flash.
+
 ## Features
 
 - Dark terminal aesthetic with typing animation and scroll reveals
